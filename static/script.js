@@ -47,6 +47,7 @@ async function search() {
       <td>${n.surname}</td>
       <td>${n.email}</td>
       <td>${n.phone}</td>
+      <td>${n.adress}</td>
       <td>
         <a href="#" onclick="edit(${n.id})" class="myButton edBtn">Edit</a>
         <a href="#" onclick="remove(${n.id})" class="myButton delBtn">Delete</a>
