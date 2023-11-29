@@ -47,11 +47,11 @@ async function search() {
       <td>${n.surname}</td>
       <td>${n.email}</td>
       <td>${n.phone}</td>
-      <td>${n.adress}</td>
       <td>
         <a href="#" onclick="edit(${n.id})" class="myButton edBtn">Edit</a>
         <a href="#" onclick="remove(${n.id})" class="myButton delBtn">Delete</a>
       </td>
+      <td>${n.id}</td>
     </tr>`
     html = html + row
   };
@@ -83,20 +83,26 @@ async function save(){
     "surname": document.getElementById('txtSurName').value
   }
   var id = document.getElementById('txtID').value
-  if(id != ''){
-    console.log("ID VALUE adentro del if:"+id)
-    data.id = id
-  }
-
   var url = URL_API + 'customers'
-  await fetch(url, {
-    'method': 'PUT',
-    'body': JSON.stringify(data),
-    'headers': {
-      'Content-Type': 'application/json',
-      },
-  })
-    window.location.reload();
+  if(id != ''){
+    data.id = id
+    await fetch(url, {
+      'method': 'PUT',
+      'body': JSON.stringify(data),
+        'headers': {
+        'Content-Type': 'application/json',
+       },
+      })
+  } else {
+      await fetch(url, {
+        'method': 'POST',
+        'body': JSON.stringify(data),
+        'headers': {
+          'Content-Type': 'application/json',
+          },
+      })
+  } 
+  window.location.reload();
   }
 
   function edit(id){

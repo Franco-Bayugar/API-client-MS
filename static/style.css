@@ -1,12 +1,14 @@
 body {
   font-family: sans-serif;
 }
+
 .firstContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 14rem;
+  padding-right: 13rem;
 }
+
 /*Table Style*/
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -19,6 +21,11 @@ body {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
+#customers th.id-row{
+  background-color: #768d87;
+}
+
 
 #customers tr:nth-child(even) {
   background-color: #f2f2f2;
@@ -35,6 +42,7 @@ body {
   background-color: #000080;
   color: white;
 }
+
 /* BTN Styles */
 .myButton {
   box-shadow: inset 0px 1px 3px 0px #91b8b3;
@@ -326,3 +334,4 @@ body {
 .modal-header h2 {
   font-size: 20px;
 }
+
