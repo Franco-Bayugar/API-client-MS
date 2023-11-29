@@ -1,1 +1,56 @@
-<h1>Pass</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+    <title>Client Manager</title>
+    <link href="images/set-up-svgrepo-com.svg" />
+  </head>
+  <body>
+    <div class="firstContainer">
+      <h1 class="appTitle">Client Manager</h1>
+      <a href="#" onclick="add()" class="myButton addBtn" id="btnAdd">Add Client</a>
+    </div>
+    <table id="customers">
+      <thead>
+        <!--Header of Table-->
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!-- Modal -->
+    <div id="modal" class="modale" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2>Client Data</h2>
+          <a
+            href="#"
+            onclick="closeModale()"
+            class="btn-close delBtn closemodale"
+            aria-hidden="true"
+            >&times;</a
+          >
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="txtID" placeholder="ID" size="20" /><br />
+          <input type="text" id="txtFirstName" placeholder="Name" size="20" /><br />
+          <input type="text" id="txtSurName" placeholder="Surname" size="20" /><br />
+          <input type="text" id="txtPhone" placeholder="Phone" size="20" /><br />
+          <input type="text" id="txtEmail" placeholder="Email" size="20" /><br />
+          <input type="text" id="txtAdress" placeholder="Adress" size="20" /><br />
+        </div>
+        <div class="modal-footer">
+          <a onclick="save()" href="#" class="myButton addBtn" id="btn_ingresar">Save</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

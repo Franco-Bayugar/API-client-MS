@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, url_for
 from flask_mysqldb import MySQL
 from flask_cors import CORS, cross_origin
 
@@ -94,7 +94,6 @@ def removeCustomer(id):
 @cross_origin()
 def index():
     return render_template('index.html')
-
 
 #* Running the APP only if I run the main.py file
 if __name__ == '__main__': 
