@@ -19,10 +19,10 @@ mysql = MySQL(app) # MySQL instance to interact with the database
 #* App functions
 
 #Get specific customer
-#* This functions uses the datatype GET (in the @app.route('URL')) to get a specific customer, returns a dictionary 
+#* This functions uses the datatype GET (in the @app.route('URL')) to get a specific customer, returns a jsonify dictionary 
 @app.route('/api/customers/<int:id>')
 @cross_origin()
-def getCustomer(id):
+def get_customer(id):
     cur = mysql.connection.cursor() # Instanciates a cursor to interact with the database, in the following line I can use SQL query
     cur.execute('SELECT id, firstname, surname, email, phone, adress FROM customers WHERE id ='+ str(id))
     data = cur.fetchall() # Retrieves all the results of the SQL query and stores them in the data variable.
@@ -40,7 +40,7 @@ def getCustomer(id):
 #* Also uses the GET data type to return all customers as an Array, this later will be reading by JS
 @app.route('/api/customers')
 @cross_origin()
-def getAllCustomers():
+def get_all_customers():
     cur = mysql.connection.cursor()
     cur.execute('SELECT id, firstname, surname, email, phone, adress FROM customers')
     data = cur.fetchall() 
@@ -59,7 +59,7 @@ def getAllCustomers():
 #* Data type POST to store a client; in the end I have to commit or push the connection to the data base
 @app.route('/api/customers', methods = ['POST'])
 @cross_origin()
-def saveCustomer():
+def save_customer():
     cur = mysql.connection.cursor() #! I don't need to request and ID here, i'm just storing
     cur.execute("INSERT INTO `customers` (`id`, `firstname`, `surname`, `email`, `phone`, `adress`) VALUES (NULL, %s, %s, %s, %s, %s);",
                 (request.json['firstname'], request.json['surname'], request.json['email'], request.json['phone'], request.json['adress']))
@@ -70,7 +70,7 @@ def saveCustomer():
 #* Data type PUT to edit a client;
 @app.route('/api/customers', methods = ['PUT']) #? Para editar se utiliza PUT
 @cross_origin()
-def updateCustomer():
+def update_customer():
     cur = mysql.connection.cursor()  #! I NEED to request and ID here to update a specific client
     cur.execute("UPDATE `customers` SET `firstname` = %s, `surname` = %s, `email` = %s, `phone` = %s, `adress` = %s WHERE `customers`.`id` = %s;",
                 (request.json['firstname'], request.json['surname'], request.json['email'], request.json['phone'], request.json['adress'], request.json['id']))
@@ -82,7 +82,7 @@ def updateCustomer():
 #* Data type DELETE'
 @app.route('/api/customers/<int:id>', methods=['DELETE']) #* Data type: Delete
 @cross_origin()
-def removeCustomer(id):
+def remove_customer(id):
     cur = mysql.connection.cursor() 
     cur.execute("DELETE FROM `customers` WHERE `customers`.`id` =" + str(id) + ";")
     mysql.connection.commit()
