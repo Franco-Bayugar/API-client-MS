@@ -4,17 +4,28 @@ body {
 
 .firstContainer {
   display: flex;
-  justify-content: flex-start; /* Change to flex-start */
+  justify-content: space-between;
   align-items: center;
-  padding-right: 13rem;
+}
+
+.buttons {
+  display: flex;
+}
+
+.myButton {
+  margin-left: 10px; /* Add some spacing between buttons */
+}
+
+.logBtn{
+  border-radius: 20px;
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
 }
 
 .appTitle{
-  padding-right: 660px;
+  padding-right: 600px;
 }
 
 /*Table Style*/
@@ -77,6 +88,11 @@ body {
 }
 .addBtn:hover {
   background: #34b191;
+}
+
+.logBtn:hover{
+  background: #bcc2c0;
+  color: #313030;
 }
 
 .btn {

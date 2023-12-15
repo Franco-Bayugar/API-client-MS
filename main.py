@@ -89,11 +89,27 @@ def remove_customer(id):
     return 'Client deleted'
 
 
+#! RENDERING CONTENT
+
 #* Rendering the index.html on the app home
 @app.route('/')
 @cross_origin()
 def index():
     return render_template('index.html')
+
+
+#* Rendering the login.html template for the /login route
+@app.route('/login')
+@cross_origin()
+def login():
+    return render_template('login.html')
+    
+#* Rendering the user.html template for the /user route
+@app.route('/user')
+@cross_origin()
+def user():
+    return render_template('user.html')
+
 
 #* Running the APP only if I run the main.py file
 if __name__ == '__main__': 

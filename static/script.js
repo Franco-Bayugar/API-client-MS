@@ -34,7 +34,7 @@ async function search() {
   var response = await fetch(url, {
     "method": 'GET',  
     "headers": {
-      "ContentType": 'application/json',
+      "Content-Type": 'application/json',
     },
   })
   customers = await response.json();
