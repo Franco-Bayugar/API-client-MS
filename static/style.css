@@ -1,37 +1,32 @@
 body {
   font-family: sans-serif;
-  background-color: #fcfcfc;
 }
+
 .firstContainer {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.firstContainer img{
-  width: 50px;
-}
-
-.secondContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .buttons {
   display: flex;
 }
 
-
 .myButton {
   margin-left: 10px; /* Add some spacing between buttons */
+}
+
+.logBtn{
+  border-radius: 20px;
 }
 
 .logo {
   height: 50px;
 }
 
+.appTitle{
+  padding-right: 800px;
+}
 
 /*Table Style*/
 #customers {
@@ -84,6 +79,7 @@ body {
 }
 
 
+
 .delBtn:hover {
   background: #c74f34; 
 }
@@ -94,7 +90,7 @@ body {
   background: #34b191;
 }
 
-.userBtn:hover{
+.logBtn:hover{
   background: #bcc2c0;
   color: #313030;
 }
@@ -221,70 +217,3 @@ body {
   font-size: 20px;
 }
 
-/*REGISTER*/
-.login {
-  width: 400px;
-  margin: 16px auto;
-  font-size: 16px;
-}
-
-
-.login-header {
-  background: #164863;
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.login-container {
-  background: #ebebeb;
-  padding: 12px;
-}
-
-/* Every row inside .login-container is defined with p tags */
-.login p {
-  padding: 12px;
-}
-
-.login input {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
-}
-
-.login input[type="submit"] {
-  background: #164863;
-  border-color: transparent;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.login input[type="submit"]:hover {
-  background: #34b191;
-}
-
-.AlreadyText {
-  padding-left: 25%;
-  font-size: 13px;
-  text-decoration-line: none;
-  color: #3b3b3b;
-}
-.AlreadyText a{
-  font-weight: bolder;
-  text-decoration-line: none;
-  color: #164863;
-}
-
-.AlreadyText a:hover{
-  color: #4885bb;
-}
