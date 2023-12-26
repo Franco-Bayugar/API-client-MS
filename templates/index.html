@@ -10,13 +10,16 @@
   </head>
   <body>
     <div class="firstContainer">
-      <img class="logo" src="static\images\set-up-svgrepo-com.svg" alt="">
-      <h1 class="appTitle">Client Management</h1>
+      <img src="static\images\set-up-svgrepo-com.svg" alt="">
+      <h1>Client Management System</h1>
+    </div>
+    <div class="secondContainer">
       <div class="buttons">
-          <a href="#" onclick="add()" class="myButton addBtn" id="btnAdd">Add Client</a>
-          <a href='/login'class="myButton logBtn">Log In</a>
-          <a href='/user'class="myButton logBtn" >User</a>
+        <a href='/user'class="myButton userBtn" >User</a>
+        <a href='/login'class="myButton userBtn">Log In</a>
+        <a href='/registration'class="myButton userBtn">Registration</a>
       </div>
+      <a href="#" onclick="add()" class="myButton addBtn" id="btnAdd">Add Client</a>
   </div>
     <table id="customers">
       <thead>

@@ -31,13 +31,19 @@ function init() {
 
 async function search() {
   var url = URL_API + 'customers';
-  var response = await fetch(url, {
-    "method": 'GET',  
-    "headers": {
-      "Content-Type": 'application/json',
-    },
-  })
-  customers = await response.json();
+  try {
+    var response = await fetch(url, {
+      "method": 'GET',
+      "headers": {
+        "Content-Type": 'application/json',
+      },
+    });
+    console.log(response)
+    customers = await response.json();
+    // Resto del código...
+  } catch (error) {
+    console.error("Error en el request:", error);
+  }
 
   var html = ''
   for(n of customers){

@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>LOG IN PAGE ON PROCESS</h1>
-</body>
-</html>
+{% extends 'registration.html' %}
+{% block title %}
+<title>Log in</title>
+{% endblock title %}
+
+{% block form %}
+<div class="login">
+    <div class="login-triangle"></div>
+    <h2 class="login-header">Log in:</h2>
+    <form class="login-container">
+      <p> {{ form.email(placeholder="Email") }}</p>
+      <p> {{ form.password(placeholder="Password") }}</p>
+      <p><input type="submit" value="Log In"></p> 
+    </form>
+  </div>
+{% endblock %}
